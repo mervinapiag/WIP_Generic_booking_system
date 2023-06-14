@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "availabilities",
+  "info": {
+    "singularName": "availability",
+    "pluralName": "availabilities",
+    "displayName": "Availability",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "availabilities"
+    },
+    "days_of_week": {
+      "type": "integer",
+      "max": 6,
+      "min": 0,
+      "required": true,
+      "default": 1
+    },
+    "start_time": {
+      "type": "time",
+      "required": true
+    },
+    "end_time": {
+      "type": "time",
+      "required": true
+    }
+  }
+}
